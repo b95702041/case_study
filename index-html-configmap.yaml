@@ -6,6 +6,8 @@ metadata:
 data:
   index.html: |
     <html>
+    <body>
     <h1>typing cat on </h1>
-    <h1>$hostname<h1>
-    </html
+    <?php echo gethostname(); ?>
+    </body>
+    </html>
