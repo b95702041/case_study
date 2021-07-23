@@ -7,8 +7,5 @@ data:
   index.html: |
     <html>
     <h1>typing cat on </h1>
-    <?php
-    echo "typing cat on ";
-    echo gethostname();
-    ?>
+    <h1>$hostname<h1>
     </html
