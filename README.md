@@ -113,15 +113,15 @@ We should be careful about the service permission. And manage private key to the
 
 
 reference:
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
-https://medium.com/@dileepjallipalli?p=fad03e5937cf
-https://www.techrepublic.com/article/how-to-deploy-nginx-on-a-kubernetes-cluster/
-https://www.geeksforgeeks.org/get-post-requests-using-python/
-https://techoverflow.net/2019/03/31/how-to-install-kubectl-on-ubuntu/
-https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/
-https://stackoverflow.com/questions/55609377/kubernetes-coredns-pods-stuck-in-pending-status-cannot-start-the-dashboard
-https://stackoverflow.com/questions/56287494/why-does-kubeadm-not-start-even-after-disabling-swap
-https://stackoverflow.com/questions/61305498/kubernetes-couldnt-able-to-join-master-node-error-execution-phase-preflight
-https://www.youtube.com/watch?v=HTNt6YjkZ7M
-https://www.tecmint.com/deploy-nginx-on-a-kubernetes-cluster/
-https://scriptcrunch.com/change-nginx-index-configmap/
+1.https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+2.https://medium.com/@dileepjallipalli?p=fad03e5937cf
+3.https://www.techrepublic.com/article/how-to-deploy-nginx-on-a-kubernetes-cluster/
+4.https://www.geeksforgeeks.org/get-post-requests-using-python/
+5.https://techoverflow.net/2019/03/31/how-to-install-kubectl-on-ubuntu/
+6.https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/
+7.https://stackoverflow.com/questions/55609377/kubernetes-coredns-pods-stuck-in-pending-status-cannot-start-the-dashboard
+8.https://stackoverflow.com/questions/56287494/why-does-kubeadm-not-start-even-after-disabling-swap
+9.https://stackoverflow.com/questions/61305498/kubernetes-couldnt-able-to-join-master-node-error-execution-phase-preflight
+10.https://www.youtube.com/watch?v=HTNt6YjkZ7M
+11.https://www.tecmint.com/deploy-nginx-on-a-kubernetes-cluster/
+12.https://scriptcrunch.com/change-nginx-index-configmap/
