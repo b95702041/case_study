@@ -2,7 +2,7 @@
 
 I launch 3 EC2 instance. 1 master, 2 workers.
 
-2 workers in `t2.micro`, master in `t2.medium`,  all in Ubuntu Server 20.04 LTS (HVM), SSD Volume Type.
+2 workers in `t2.micro`, master in `t2.medium`,  all in` Ubuntu Server 20.04 LTS (HVM)`, SSD Volume Type.
 
 They are in same vpc, subnet and security group.
 
