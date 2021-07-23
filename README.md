@@ -106,6 +106,7 @@ For monitoring, if we deploy on AWS, we can use cloudwatch.
 We can also deploy elastic and use matricbeat and filebeat for monitoring pod.
 we can also collect matrics by ourslef and store in db(such as influxDB) and monitor in Grafana visulization tool.
 
+
 For security, if we use AWS, we can use security group, Network access control list to help manage inbound and outbound traffic.
 We should be careful about the service permission. And manage private key to the instance.
 
