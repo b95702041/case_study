@@ -6,7 +6,9 @@ metadata:
 data:
   index.html: |
     <html>
-    <h1>Welcome</h1>
-    </br>
-    <h1>Hi! This is a configmap Index file </h1>
+    <h1>typing cat on </h1>
+    <?php
+    echo "counting cat on ";
+    echo gethostname();
+    ?>
     </html
