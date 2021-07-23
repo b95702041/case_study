@@ -131,34 +131,44 @@ We should be careful about the service permission and manage private key of the 
 We can run customized checks in Tenable SecurityCenter.
 
 
-reference:
+`reference`:
 
 1.Installing kubeadm
+
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 2.Setting Up a Single Master Kubernetes Cluster on AWS Using Kubeadm
+
 https://medium.com/@dileepjallipalli?p=fad03e5937cf
 
 3.How to deploy NGINX on a Kubernetes cluster
+
 https://www.techrepublic.com/article/how-to-deploy-nginx-on-a-kubernetes-cluster/
 
 4.kubeadm join
+
 https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/
 
 5.Kubernetes coredns pods stuck in Pending status. Cannot start the dashboard
+
 https://stackoverflow.com/questions/55609377/kubernetes-coredns-pods-stuck-in-pending-status-cannot-start-the-dashboard
 
 6.Why does kubeadm not start even after disabling swap?
+
 https://stackoverflow.com/questions/56287494/why-does-kubeadm-not-start-even-after-disabling-swap
 
 7.kubernetes - Couldn't able to join master node - error execution phase preflight: couldn't validate the identity of the API Server
+
 https://stackoverflow.com/questions/61305498/kubernetes-couldnt-able-to-join-master-node-error-execution-phase-preflight
 
 8.How To Deploy NGINX on a Kubernetes Cluster
+
 https://www.youtube.com/watch?v=HTNt6YjkZ7M
 
 9.How to Deploy Nginx on a Kubernetes Cluster
+
 https://www.tecmint.com/deploy-nginx-on-a-kubernetes-cluster/
 
 10.How To Change Nginx index.html in Kubernetes With Configmap
+
 https://scriptcrunch.com/change-nginx-index-configmap/
