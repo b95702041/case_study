@@ -120,8 +120,9 @@ which are 107.22.41.11:32000 and 34.203.10.35:32000
 I tried to use php to get nodename but didn't work in html. Will need more time to investigate.
 
 
+
 For monitoring, if we deploy on AWS, we can use cloudwatch.
-We can deploy elastic and use matricbeat and filebeat for monitoring.
+We can deploy elasticsearch and use matricbeat and filebeat for monitoring.
 Also, we can collect matrics by ourselves and store in db(such as influxDB) and display in Grafana to visualize.
 In addition, we can run Sensu checks on the pods. And hooked with PagerDuty and Slack for on-call engineer.
 
@@ -129,6 +130,7 @@ In addition, we can run Sensu checks on the pods. And hooked with PagerDuty and 
 For security, if we use AWS, we can use security group, Network access control list to help manage inbound and outbound traffic.
 We should be careful about the service permission and manage private key of the instance.
 We can run customized checks in Tenable SecurityCenter.
+
 
 
 `reference`:
