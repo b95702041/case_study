@@ -6,30 +6,34 @@ I launch 3 EC2 instance. 1 master, 2 workers.
 
 They are in same vpc, subnet and security group.
 
-ssh -i case_study.pem ubuntu@ec2-107-22-41-11.compute-1.amazonaws.com
-ssh -i case_study.pem ubuntu@ec2-34-203-10-35.compute-1.amazonaws.com
-ssh -i case_study.pem ubuntu@ec2-54-235-16-242.compute-1.amazonaws.com
+```ssh -i case_study.pem ubuntu@ec2-107-22-41-11.compute-1.amazonaws.com```
 
 
 Update the apt package index and install packages needed to use the Kubernetes apt repository:
 
+```
 sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
 
+sudo apt-get install -y apt-transport-https ca-certificates curl
+```
 Download the Google Cloud public signing key:
 
+```
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+```
 
 Add the Kubernetes apt repository:
 
+```
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
 
 Update apt package index, install kubelet, kubeadm and kubectl, and pin their version:
-
+```
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
-
-
+```
+```
 swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 sudo apt install docker.io -y
@@ -38,7 +42,7 @@ sudo systemctl restart docker
 sudo systemctl enable docker.service
 sudo apt-get update
 sudo systemctl daemon-reload
-
+```
 
 Kubernetes_master
 
@@ -69,23 +73,19 @@ Simple fix: Expose port:6443 in Security Group of my AWS EC2 instance.
 
 
 Check the nodes running in your k8s cluster. This can be done with the help of the following command.
+```
 kubectl get nodes
-
-
-
-
-
+```
+```
 kubectl get pods --all-namespaces
-
+```
 
 
 
 in worker node
-
-
-
+```
 kubeadm join --token qiey62.dbip12b1tss8thzf 172.31.18.33:6443 --discovery-token-ca-cert-hash sha256:bced5739dddcd61a168ac6f61616ccce1a7a89908813428930cc2634b1f347c0
-
+```
 
 in master
 
