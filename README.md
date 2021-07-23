@@ -60,15 +60,15 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 
 
 Then you can join any number of worker nodes by running the following on each as root:
-
+```
 sudo kubeadm join 172.31.21.216:6443 --token 87ywye.5077xl6oxp1fh6vz --discovery-token-ca-cert-hash sha256:3e4eba75d962ef774ebb1caa0d23d1cbb2a85db25747d5bf3370de63bba54fb0
+```
 
-
-
+```
 [preflight] Running pre-flight checks
 	[WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
 error execution phase preflight: couldn't validate the identity of the API Server: Get "https://172.31.15.150:6443/api/v1/namespaces/kube-public/configmaps/cluster-info?timeout=10s": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
-
+```
 Simple fix: Expose port:6443 in Security Group of my AWS EC2 instance.
 
 
