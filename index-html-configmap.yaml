@@ -8,7 +8,7 @@ data:
     <html>
     <h1>typing cat on </h1>
     <?php
-    echo "counting cat on ";
+    echo "typing cat on ";
     echo gethostname();
     ?>
     </html
