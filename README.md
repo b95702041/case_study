@@ -115,8 +115,9 @@ We create a NodePort service to access the Nginx deployment from any Kubernetes 
 
 Save the manifest as `nginx-service.yaml`
 
-We can access it via `worker public ip: nginx port`.
-which are 107.22.41.11:32000 and 34.203.10.35:32000
+We can access it via `worker public ip: nginx port`which are 107.22.41.11:32000 and 34.203.10.35:32000. 
+(EC2 public ip, I will terminate these instances on Aug, 26 to save money :))
+
 I tried to use php to get nodename but didn't work in html. Will need more time to investigate.
 
 
