@@ -99,7 +99,7 @@ Next, we create g a file index.html.
 
 Create the config map
 
-````
+```
 kubectl apply -f index-html-configmap.yaml
 ```
 
@@ -133,26 +133,32 @@ We can run customized checks in Tenable SecurityCenter.
 
 reference:
 
-1.https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+1.Installing kubeadm
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
-2.https://medium.com/@dileepjallipalli?p=fad03e5937cf
+2.Setting Up a Single Master Kubernetes Cluster on AWS Using Kubeadm
+https://medium.com/@dileepjallipalli?p=fad03e5937cf
 
-3.https://www.techrepublic.com/article/how-to-deploy-nginx-on-a-kubernetes-cluster/
+3.How to deploy NGINX on a Kubernetes cluster
+https://www.techrepublic.com/article/how-to-deploy-nginx-on-a-kubernetes-cluster/
 
-4.https://www.geeksforgeeks.org/get-post-requests-using-python/
+4.kubeadm join
+https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/
 
-5.https://techoverflow.net/2019/03/31/how-to-install-kubectl-on-ubuntu/
+5.Kubernetes coredns pods stuck in Pending status. Cannot start the dashboard
+https://stackoverflow.com/questions/55609377/kubernetes-coredns-pods-stuck-in-pending-status-cannot-start-the-dashboard
 
-6.https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/
+6.Why does kubeadm not start even after disabling swap?
+https://stackoverflow.com/questions/56287494/why-does-kubeadm-not-start-even-after-disabling-swap
 
-7.https://stackoverflow.com/questions/55609377/kubernetes-coredns-pods-stuck-in-pending-status-cannot-start-the-dashboard
+7.kubernetes - Couldn't able to join master node - error execution phase preflight: couldn't validate the identity of the API Server
+https://stackoverflow.com/questions/61305498/kubernetes-couldnt-able-to-join-master-node-error-execution-phase-preflight
 
-8.https://stackoverflow.com/questions/56287494/why-does-kubeadm-not-start-even-after-disabling-swap
+8.How To Deploy NGINX on a Kubernetes Cluster
+https://www.youtube.com/watch?v=HTNt6YjkZ7M
 
-9.https://stackoverflow.com/questions/61305498/kubernetes-couldnt-able-to-join-master-node-error-execution-phase-preflight
+9.How to Deploy Nginx on a Kubernetes Cluster
+https://www.tecmint.com/deploy-nginx-on-a-kubernetes-cluster/
 
-10.https://www.youtube.com/watch?v=HTNt6YjkZ7M
-
-11.https://www.tecmint.com/deploy-nginx-on-a-kubernetes-cluster/
-
-12.https://scriptcrunch.com/change-nginx-index-configmap/
+10.How To Change Nginx index.html in Kubernetes With Configmap
+https://scriptcrunch.com/change-nginx-index-configmap/
