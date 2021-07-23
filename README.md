@@ -11,7 +11,7 @@ Download private key and ssh to the instance:
 ```ssh -i case_study.pem ubuntu@ec2-107-22-41-11.compute-1.amazonaws.com```
 
 
-Update the apt package index and install packages needed to use the Kubernetes apt repository:
+Update the apt package and install packages needed to use the Kubernetes apt repository:
 
 ```
 sudo apt-get update
