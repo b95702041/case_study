@@ -1,12 +1,10 @@
 # case_study
 
-I launch 3 EC2 instance.
-1 is master, 2 are workers.
-2 in t2.micro master in t2.medium, Ubuntu Server 20.04 LTS (HVM), SSD Volume Type.
+I launch 3 EC2 instance. 1 master, 2 workers.
 
-same vpc. same subnet
-subnet-c55c0ca3
-choose same security group.
+2 workers in `t2.micro` master in `t2.medium`, with Ubuntu Server 20.04 LTS (HVM), SSD Volume Type.
+
+They are in same vpc, subnet and security group.
 
 ssh -i case_study.pem ubuntu@ec2-107-22-41-11.compute-1.amazonaws.com
 ssh -i case_study.pem ubuntu@ec2-34-203-10-35.compute-1.amazonaws.com
