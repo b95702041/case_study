@@ -6,6 +6,8 @@ I launch 3 EC2 instance. 1 master, 2 workers.
 
 They are in same vpc, subnet and security group.
 
+Download private key and ssh to the instance:
+
 ```ssh -i case_study.pem ubuntu@ec2-107-22-41-11.compute-1.amazonaws.com```
 
 
@@ -33,9 +35,15 @@ Update apt package index, install kubelet, kubeadm and kubectl, and pin their ve
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
+To disable swapping to avoid losing isolation properties.
+
 ```
 swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+```
+
+Set docker group for permission control.
+```
 sudo apt install docker.io -y
 sudo usermod -aG docker ubuntu
 sudo systemctl restart docker
@@ -67,13 +75,13 @@ Then you can join any number of worker nodes by running the following on each as
 ```
 sudo kubeadm join 172.31.21.216:6443 --token 87ywye.5077xl6oxp1fh6vz --discovery-token-ca-cert-hash sha256:3e4eba75d962ef774ebb1caa0d23d1cbb2a85db25747d5bf3370de63bba54fb0
 ```
+I faced this join issue. We can port:6443 in Security Group of my AWS EC2 instance to fix this.
 
 ```
 [preflight] Running pre-flight checks
 	[WARNING IsDockerSystemdCheck]: detected "cgroupfs" as the Docker cgroup driver. The recommended driver is "systemd". Please follow the guide at https://kubernetes.io/docs/setup/cri/
 error execution phase preflight: couldn't validate the identity of the API Server: Get "https://172.31.15.150:6443/api/v1/namespaces/kube-public/configmaps/cluster-info?timeout=10s": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
 ```
-Simple fix: Expose port:6443 in Security Group of my AWS EC2 instance.
 
 
 Check the nodes running in your k8s cluster. This can be done with the help of the following command.
@@ -85,24 +93,32 @@ kubectl get pods --all-namespaces
 ```
 
 
-
 in worker node
 ```
 kubeadm join --token qiey62.dbip12b1tss8thzf 172.31.18.33:6443 --discovery-token-ca-cert-hash sha256:bced5739dddcd61a168ac6f61616ccce1a7a89908813428930cc2634b1f347c0
 ```
 
-in master
+Next, we create g a file index.html.
 
+Create the config map
 
+````
+kubectl apply -f index-html-configmap.yaml
+```
 
-`worker public ip: nginx port`
+Now working on the deployment config which uses the index.html config map. Save the manifest as `nginx.yaml`
+
+Create the deployment.
+```
+kubectl apply -f nginx.yaml
+```
+
+We create a NodePort service to access the Nginx deployment from any Kubernetes node IP on port 32000.
+
+Save the manifest as `nginx-service.yaml`
+
+We can access it via `worker public ip: nginx port`.
 which are 107.22.41.11:32000 and 34.203.10.35:32000
-
-
-sudo apt install php7.4-cli
-
-cat index-html-configmap.yaml
-
 
 
 
