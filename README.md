@@ -2,7 +2,7 @@
 
 I launch 3 EC2 instance. 1 master, 2 workers.
 
-2 workers in `t2.micro` master in `t2.medium`, with Ubuntu Server 20.04 LTS (HVM), SSD Volume Type.
+2 workers in `t2.micro`, master in `t2.medium`,  all in Ubuntu Server 20.04 LTS (HVM), SSD Volume Type.
 
 They are in same vpc, subnet and security group.
 
@@ -52,9 +52,7 @@ sudo apt-get update
 sudo systemctl daemon-reload
 ```
 
-Kubernetes_master
-
-in master
+In master node, run the following command:
 ```
 sudo kubeadm init --pod-network-cidr=172.31.0.0/20
 ```
@@ -64,14 +62,13 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-You should now deploy a pod network to the cluster.
+now deploy a pod network to the cluster.
 
 ```
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 ```
 
-
-Then you can join any number of worker nodes by running the following on each as root:
+Then  join 2 worker nodes by running the following on each as root:
 ```
 sudo kubeadm join 172.31.21.216:6443 --token 87ywye.5077xl6oxp1fh6vz --discovery-token-ca-cert-hash sha256:3e4eba75d962ef774ebb1caa0d23d1cbb2a85db25747d5bf3370de63bba54fb0
 ```
@@ -93,7 +90,7 @@ kubectl get pods --all-namespaces
 ```
 
 
-in worker node
+In worker node,run the following command to join k8s cluster.
 ```
 kubeadm join --token qiey62.dbip12b1tss8thzf 172.31.18.33:6443 --discovery-token-ca-cert-hash sha256:bced5739dddcd61a168ac6f61616ccce1a7a89908813428930cc2634b1f347c0
 ```
@@ -119,16 +116,18 @@ Save the manifest as `nginx-service.yaml`
 
 We can access it via `worker public ip: nginx port`.
 which are 107.22.41.11:32000 and 34.203.10.35:32000
-
+I tried to use php to get nodename but didn't work in html. Will need more time to investigate.
 
 
 For monitoring, if we deploy on AWS, we can use cloudwatch.
-We can also deploy elastic and use matricbeat and filebeat for monitoring pod.
-we can also collect matrics by ourslef and store in db(such as influxDB) and monitor in Grafana visulization tool.
+We can deploy elastic and use matricbeat and filebeat for monitoring.
+Also, we can collect matrics by ourselves and store in db(such as influxDB) and display in Grafana to visualize.
+In addition, we can run Sensu checks on the pods. And hooked with PagerDuty and Slack for on-call engineer.
 
 
 For security, if we use AWS, we can use security group, Network access control list to help manage inbound and outbound traffic.
-We should be careful about the service permission. And manage private key to the instance.
+We should be careful about the service permission and manage private key of the instance.
+We can run customized checks in Tenable SecurityCenter.
 
 
 reference:
