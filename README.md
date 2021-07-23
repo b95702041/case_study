@@ -91,7 +91,7 @@ in master
 
 
 
-worker public ip: nginx port
+`worker public ip: nginx port`
 which are 107.22.41.11:32000 and 34.203.10.35:32000
 
 
