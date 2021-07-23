@@ -106,6 +106,7 @@ kubectl apply -f index-html-configmap.yaml
 Now working on the deployment config which uses the index.html config map. Save the manifest as `nginx.yaml`
 
 Create the deployment.
+
 ```
 kubectl apply -f nginx.yaml
 ```
