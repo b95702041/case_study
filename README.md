@@ -113,6 +113,7 @@ We should be careful about the service permission. And manage private key to the
 
 
 reference:
+
 1.https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 2.https://medium.com/@dileepjallipalli?p=fad03e5937cf
